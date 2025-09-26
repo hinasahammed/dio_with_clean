@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:dio_with_clean/core/constants/api_constants.dart';
+import 'package:dio_with_clean/core/network/interceptors/auth_interceptor.dart';
 import 'package:dio_with_clean/core/network/interceptors/error_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -36,6 +37,8 @@ class DioClient {
       ),
 
       ErrorInterceptor(),
+
+      AuthInterceptor(),
     ]);
     return dio;
   }
