@@ -91,6 +91,18 @@ class ApiServiceImpl implements ApiService {
       case DioExceptionType.receiveTimeout:
       case DioExceptionType.connectionError:
         return NetworkException(message: 'Network error occurred');
+      case DioExceptionType.unknown:
+        if (e.message?.contains('SocketException') == true ||
+            e.message?.contains('Failed host lookup') == true ||
+            e.message?.contains('Network is unreachable') == true) {
+          return NetworkException(
+            message:
+                'No internet connection. Please check your network settings.',
+          );
+        }
+        return ServerException(
+          message: e.message ?? 'Unknown network error occurred',
+        );
       case DioExceptionType.badResponse:
         return ServerException(
           message: e.response?.data['message'] ?? 'Server error occurred',

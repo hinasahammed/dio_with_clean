@@ -28,7 +28,7 @@ class TodosProvider extends _$TodosProvider {
   Future<void> getTodos() async {
     final result = await _todoUseCases.getTodos();
     result.fold(
-      (failure) => log("Failed"),
+      (failure) => log(failure.message),
       (response) => state = state.copyWith(todos: response),
     );
   }

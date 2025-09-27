@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio_with_clean/core/error/exceptions.dart';
 import 'package:dio_with_clean/core/error/failures.dart';
-import 'package:dio_with_clean/core/network/network_info.dart';
+import 'package:dio_with_clean/core/network/networkInfo/network_info.dart';
 import 'package:dio_with_clean/features/todo/data/dataSources/todo_remote_data_source.dart';
 import 'package:dio_with_clean/features/todo/data/models/todo_model/todo_model.dart';
 import 'package:dio_with_clean/features/todo/domain/repositories/todo_repository.dart';

@@ -8,7 +8,7 @@ class ErrorInterceptor extends Interceptor {
   void onError(DioException err, ErrorInterceptorHandler handler) {
     String message = _getErrorMessage(err);
 
-    final serverException = ServerException(
+     ServerException(
       message: message,
       statusCode: err.response?.statusCode,
     );
